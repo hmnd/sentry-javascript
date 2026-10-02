@@ -7,6 +7,11 @@ export default {
   test: {
     ...baseConfig.test,
     setupFiles: ['./test/vitest.setup.ts'],
+    typecheck: {
+      enabled: true,
+      tsconfig: './tsconfig.test.json',
+      ignoreSourceErrors: true,
+    },
     alias: [
       {
         find: '$app/stores',

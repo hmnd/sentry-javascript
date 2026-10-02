@@ -26,9 +26,13 @@ export {
   captureFeedback,
   captureMessage,
   close,
+  consoleIntegration,
+  consoleLoggingIntegration,
   continueTrace,
+  createConsolaReporter,
   createTransport,
   dedupeIntegration,
+  eventFiltersIntegration,
   extraErrorDataIntegration,
   flush,
   functionToStringIntegration,
@@ -43,6 +47,7 @@ export {
   getSpanStatusFromHttpCode,
   getTraceData,
   getTraceMetaTags,
+  growthbookIntegration,
   isInitialized,
   isEnabled,
   lastEventId,
@@ -57,6 +62,7 @@ export {
   SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN,
   SEMANTIC_ATTRIBUTE_SENTRY_SAMPLE_RATE,
   setContext,
+  setConversationId,
   setCurrentClient,
   setExtra,
   setExtras,
@@ -67,6 +73,7 @@ export {
   setAttribute,
   setAttributes,
   setUser,
+  spanStreamingIntegration,
   spanToBaggageHeader,
   spanToStaticSpanJSON,
   spanToJSON,
@@ -78,6 +85,7 @@ export {
   startSpan,
   startSpanManual,
   trpcMiddleware,
+  updateSpanName,
   withActiveSpan,
   withIsolationScope,
   withMonitor,
@@ -85,13 +93,27 @@ export {
   withStaticSpan,
   // oxlint-disable-next-line typescript/no-deprecated
   withStreamedSpan,
+  wrapMcpServerWithSentry,
   supabaseIntegration,
   instrumentSupabaseClient,
+  instrumentOpenAiClient,
+  instrumentAnthropicAiClient,
+  instrumentGoogleGenAIClient,
   zodErrorsIntegration,
   featureFlagsIntegration,
   vercelAIIntegration,
   type FeatureFlagsIntegration,
 } from '@sentry/cloudflare';
+
+export {
+  captureSession,
+  endSession,
+  httpHeadersToSpanAttributes,
+  parameterize,
+  profiler,
+  startSession,
+  winterCGHeadersToDict,
+} from '@sentry/core';
 
 /**
  * Tracks the Svelte component's initialization and mounting operation as well as
